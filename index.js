@@ -93,7 +93,7 @@ const reportLoadJob = () => {
     const webApiUrl = `${webApiUrlBase}/nodes/${node_id}/info?key=${key}&node_id=${node_id}`;
 
     const payload = {
-        'load': os.loadavg(),
+        'load': os.loadavg()[1],
         'uptime': Math.floor(os.uptime()),
     };
     got.post(webApiUrl, {
